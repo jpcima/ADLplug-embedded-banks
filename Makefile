@@ -6,5 +6,5 @@ all: $(paks)
 clean:
 	rm -f $(paks)
 
-banks-%.pak:
+banks-%.pak: pak-banks.sh
 	./pak-banks.sh $* > banks-$*.pak

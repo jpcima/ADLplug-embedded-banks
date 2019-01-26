@@ -11,7 +11,7 @@ declare -a banks=()
 declare -a names=()
 for bank in "$1"/*.{wopl,wopn}; do
     banks+=("$bank")
-    names+=("$(basename "${bank: : -5}" | sed -r 's/^[0-9]{3} //')")
+    names+=("$(basename "${bank: : -5}" | sed -r 's/^[0-9]{3} //' | tr '=' ':')")
 done
 
 cleanup() {
